@@ -25,6 +25,8 @@ These applications were all built by opening the terminal in Visual Studio with 
 dotnet publish -r win-x64
 ```
 
+Then the generated executables from the bin\debug\.net6.0\win-x64\publish directory within each project can be copied to overwrite the existing executables in the main solution directory.
+
 Running all 5 applications at the same time will generate 2 consumer queues in RabbitMQ: RebusHandler and RebusHandlerException
 
 The publisher application will prompt you to press any key to publish a message. This message will end up in each of the above RabbitMQ queues.
