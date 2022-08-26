@@ -3,9 +3,9 @@
 ## Purpose
 The purpose of this application is to demonstate what I believe is an issue with Rebus. This occurs when using a RabbitMQ transport and multiple instances of an application are running against the same input queue. 
 
-In this scenario, when an exception is thrown in a message handler. The message is immediately handled by the other running application, even if the bus is not configured for any message retries. 
+This scenario applies only when an exception is thrown in a message handler. The message is immediately handled by the other running application, even if the bus is not configured for any message retries. 
 
-For the same scenario, when an exception is not thrown in a message handler. The message is successfully being handled just a single time, across all running applications.
+For the same scenario, but when an exception does not occur in the messagehandler, the message is successfully being handled just a single time. This across all running applications.
 
 ## Prerequisites
 A RabbitMQ environment must exist locally, running on localhost with the default ports of 15672:5672. There must be a virtual host of 'test' with access enabled for a user with name 'admin' and a password of 'password'. These variables can easily be changed in the source code within the Program.cs files near the top.
